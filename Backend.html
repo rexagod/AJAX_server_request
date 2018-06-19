@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backend</title>
+</head>
+<body>
+
+	<div style="margin: 25vh auto; width: 50%; height: 50%; border: 5px solid grey; padding: 5vh 5vw">
+		
+		<center>
+		<div>
+		<input type="text" name="studentId" id="studentId" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Enter Student ID" onkeyup="myProcess()" />
+		<p id="content"></p>
+		</div>
+		</center>
+
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	
+	function myProcess(){
+
+		var x,y;
+		var xx;
+
+		x = document.getElementById('studentId').value; //entered studentId
+
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if (this.status == 200 && this.readyState == 4) {
+
+				xx = JSON.parse(this.responseText); //recieved response
+
+				for (y=0; y<=xx.students.length; y++) {
+
+					if(xx.students[y].id == x) {
+
+						document.getElementById('content').innerHTML = "MATCHED!!"
+
+					// document.getElementById('content').innerHTML = "<p><em>Marks: </em>" + xx.x[0] + "<br><br><em>Fees Payment:</em>" + xx.x[1] + "</p>";
+
+					}
+
+				}
+
+			}
+		};
+
+		xhttp.open("GET","db.json",true);
+		xhttp.send();
+
+	}
+
+</script>
+
+</html>

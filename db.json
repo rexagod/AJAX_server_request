@@ -1,0 +1,4 @@
+{
+	"students":[{"name":"studentX","id":"1157"},{"name":"studentY","id":"1147"},{"name":"studentZ","id":"1167"}],
+	"marks":[{"Physics":["5","4","9"],"Maths":["5","4","9"],"Chemistry":["5","4","9"]}]
+}
