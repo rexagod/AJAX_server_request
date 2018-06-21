@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backend</title>
+</head>
+<body>
+
+	<div style="margin: 25vh auto; width: 50%; height: 50%; border: 5px solid grey; padding: 5vh 5vw">
+		
+		<center>
+		<div>
+		<input type="text" name="studentId" id="studentId" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Enter Student ID" onkeyup="myProcess()" />
+		<p id="content"></p>
+		<a href="_index.html"></a>
+		</div>
+		</center>
+
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	
+	function myProcess(){
+
+		var x,y;
+		var xx;
+		var t = "StudentAA";
+
+		x = document.getElementById('studentId').value; //entered studentId
+
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if (this.status == 200 && this.readyState == 4) {
+
+				xx = JSON.parse(this.responseText); //recieved response
+
+				xx.students.push({
+					"name":t,
+					"id":"1129",
+					"marks":["3","2","5","5","1"]
+					});  //{"name":"studentX","id":"1157"}
+
+				for (y=0; y<=xx.students.length; y++) {
+
+					if(xx.students[y].id == x) {
+
+						document.getElementById('content').innerHTML = "<p><em>Name: </em>" + xx.students[y].name + "<br><br><em>Marks: </em>" + xx.students[y].marks + "</p>";
+
+					}
+
+				}
+
+			}
+		}
+
+		xhttp.open("GET","dbentry.json",true);
+		xhttp.send();
+
+	}
+
+</script>
+
+</html>
