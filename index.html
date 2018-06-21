@@ -24,6 +24,7 @@
 
 		var x,y;
 		var xx;
+		var t = "StudentAA";
 
 		x = document.getElementById('studentId').value; //entered studentId
 
@@ -34,7 +35,7 @@
 				xx = JSON.parse(this.responseText); //recieved response
 
 				xx.students.push({
-					"name":"StudentA",
+					"name":t,
 					"id":"1129"
 					});  //{"name":"studentX","id":"1157"}
 
