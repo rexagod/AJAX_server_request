@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Backend</title>
+	<title>Admin Portal</title>
+	<script type="text/javascript" src="entry.js"></script>
 </head>
 <body>
 
@@ -9,55 +10,26 @@
 		
 		<center>
 		<div>
-		<input type="text" name="studentId" id="studentId" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Enter Student ID" onkeyup="myProcess()" />
-		<p id="content"></p>
+		<input type="text" name="" id="name" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Student's name" />
+		<input type="text" name="" id="sid" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Student's ID" />
+		<input type="text" name="" id="physics" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Physics marks" />
+		<input type="text" name="" id="chemistry" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Chemistry marks" />
+		<input type="text" name="" id="maths" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Maths marks" />
+		<input type="text" name="" id="english" style="width: 30%; cursor: pointer; text-align: center;" placeholder="English marks" />
+		<input type="text" name="" id="computer" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Computer marks" />
+		<input type="text" name="" id="fname" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Father's name" />
+		<input type="text" name="" id="mname" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Mother's name" />
+		<input type="text" name="" id="homeaddr" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Personal Address" />
+		<input type="text" name="" id="cdet" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Contact details" />
+		<input type="text" name="" id="fpay" style="width: 30%; cursor: pointer; text-align: center;" placeholder="Fee Status" />
+		<button style="background-color: #f6f6f6; color: black; font-style: bold; padding-left: 4px; padding-right: 4px;" onclick="myInit()">Add to Records</button>
+
+		<p id="info"></p>
+
 		</div>
 		</center>
 
 	</div>
 
 </body>
-
-<script type="text/javascript">
-	
-	function myProcess(){
-
-		var x,y;
-		var xx;
-		var t = "StudentAA";
-
-		x = document.getElementById('studentId').value; //entered studentId
-
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function(){
-			if (this.status == 200 && this.readyState == 4) {
-
-				xx = JSON.parse(this.responseText); //recieved response
-
-				xx.students.push({
-					"name":t,
-					"id":"1129",
-					"marks":["3","2","5","5","1"]
-					});  //{"name":"studentX","id":"1157"}
-
-				for (y=0; y<=xx.students.length; y++) {
-
-					if(xx.students[y].id == x) {
-
-						document.getElementById('content').innerHTML = "<p><em>Name: </em>" + xx.students[y].name + "<br><br><em>Marks: </em>" + xx.students[y].marks + "</p>";
-
-					}
-
-				}
-
-			}
-		};
-
-		xhttp.open("GET","db.json",true);
-		xhttp.send();
-
-	}
-
-</script>
-
 </html>
