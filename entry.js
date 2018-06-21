@@ -28,10 +28,11 @@ var fpay = document.getElementById("fpay").value;
 var xhttpr = new XMLHttpRequest();
 var xobj;
 xhttpr.onreadystatechange = function() {
-	if(xhttpr.readyState == 4 && xhttpr.status == 200) {
+	if(this.readyState == 4 && this.status == 200) {
 
 		xobj = JSON.parse(this.responseText);
-		sobj.students.push( {"name":name,
+
+		xobj.students.push( {"name":name,
 							 "id":idgen,
 							 //"marks":marks,
 							 "fname":fname,
@@ -40,10 +41,9 @@ xhttpr.onreadystatechange = function() {
 							 "cdet":cdet,
 							 "fpay":fpay
 							 //"pres":
-							 }
-							);
+							 });
 
-		document.getElementById('info').innerHTML = "Information added to records!";
+		document.getElementById('info').innerHTML = "<em>Information added to records!</em>";
 	}
 }
 xhttpr.open("GET","dbentry.json",true);
