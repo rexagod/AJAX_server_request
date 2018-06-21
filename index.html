@@ -36,14 +36,15 @@
 
 				xx.students.push({
 					"name":t,
-					"id":"1129"
+					"id":"1129",
+					"marks":["3","2","5","5","1"]
 					});  //{"name":"studentX","id":"1157"}
 
 				for (y=0; y<=xx.students.length; y++) {
 
 					if(xx.students[y].id == x) {
 
-						document.getElementById('content').innerHTML = "<p><em>Name: </em>" + xx.students[y].name + "<br><br><em>Marks:</em>" + xx.marks[0].physics[y] + ", " + xx.marks[1].maths[y] + ", " +xx.marks[2].english[y] + "</p>";
+						document.getElementById('content').innerHTML = "<p><em>Name: </em>" + xx.students[y].name + "<br><br><em>Marks: </em>" + xx.students[y].marks + "</p>";
 
 					}
 
