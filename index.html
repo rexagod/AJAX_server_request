@@ -33,6 +33,11 @@
 
 				xx = JSON.parse(this.responseText); //recieved response
 
+				xx.students.push({
+					"name":"StudentA",
+					"id":"1129"
+					});  //{"name":"studentX","id":"1157"}
+
 				for (y=0; y<=xx.students.length; y++) {
 
 					if(xx.students[y].id == x) {
