@@ -66,7 +66,7 @@
       <body>
            <div class="container" style="width:500px;">
             <br />
-                <h3 align="">Admin Portal | <a href="student portal.html">Student Portal</a></h3><br />
+                <h3 align="">Admin Portal | <a href="index.html">Student Portal</a></h3><br />
                 <form method="post">
                      <?php
                      if(isset($error))
