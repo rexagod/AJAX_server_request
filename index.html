@@ -13,6 +13,7 @@
                      <br/><h4>Search Student by Id</h4><br/>
                      <input type="text" name="studentId" class="form-control" id="studentId" style="cursor: pointer; text-align: center;" placeholder="Enter Student Id" onkeyup="myProcess()" /><br>
            <div id="content"></div>
+                     <button id="button" onclick="myProcess2()" class="btn btn-info" style="display: none;">Hide details</button>
                    </div>
            </div>
            <br />
@@ -35,8 +36,12 @@
         for (y=0; y<=xx.length; y++) {
 
           if(xx[y].id == x) {
-            
+
+            document.getElementById('content').style.display = "block";
+
             document.getElementById('content').innerHTML = "<p><b>Name: </b>" + xx[y].name + "<br /><b>Father's name: </b>"+ xx[y].fname + "<br /><b>Mother's name: </b>" + xx[y].mname + "<br /><b>Address: </b>" + xx[y].address + "<br /><b>Contact details: </b>" + xx[y].contact + "</p>";
+
+            document.getElementById('button').style.display = "block";
 
           }
 
@@ -47,6 +52,13 @@
 
     xhttp.open("GET","employee_data.json",true);
     xhttp.send();
+
+  }
+
+  function myProcess2() {
+
+    document.getElementById('content').style.display = "none";
+    document.getElementById('button').style.display = "none";    
 
   }
 
