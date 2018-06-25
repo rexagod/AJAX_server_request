@@ -31,7 +31,7 @@
     xhttp.onreadystatechange = function(){
       if (this.status == 200 && this.readyState == 4) {
 
-        xx = JSON.parse(this.responseText); //recieved response
+        xx = JSON.parse(this.responseText);
 
         for (y=0; y<=xx.length; y++) {
 
@@ -39,7 +39,7 @@
 
             document.getElementById('content').style.display = "block";
 
-            document.getElementById('content').innerHTML = "<p><b>Name: </b>" + xx[y].name + "<br /><b>Father's name: </b>"+ xx[y].fname + "<br /><b>Mother's name: </b>" + xx[y].mname + "<br /><b>Address: </b>" + xx[y].address + "<br /><b>Contact details: </b>" + xx[y].contact + "</p>";
+            document.getElementById('content').innerHTML = "<p><b>Name: </b>" + xx[y].name + "<br /><b>Father's name: </b>"+ xx[y].fname + "<br /><b>Mother's name: </b>" + xx[y].mname + "<br /><b>Address: </b>" + xx[y].address + "<br /><b>Contact details: </b>" + xx[y].contact + "<br /><b>Fee status: </b>"+ xx[y].fees +/* "<br /><b>Absents: </b>" + xx[y].abs + "<br /><b>Marks: </b>"+ xx[y].marks + */"</p>";
 
             document.getElementById('button').style.display = "block";
 

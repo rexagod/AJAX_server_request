@@ -50,7 +50,7 @@
            }
            else
            {
-                $error = 'JSON File not exits';
+                $error = 'JSON File does not exist!';
            }
       }
  }
@@ -85,7 +85,13 @@
                      <label>Address</label>
                      <input type="text" name="address" class="form-control" /><br />
                      <label>Contact</label>
-                     <input type="text" name="contact" class="form-control" /><br /><br />
+                     <input type="text" name="contact" class="form-control" /><br />
+                     <!-- <label>Fee Status</label>
+                     <input type="text" name="fees" class="form-control" />
+                     <label>Absents</label>
+                     <input type="text" name="abs" class="form-control" />
+                     <label>Marks</label>
+                     <input type="text" name="marks" class="form-control" /><br /> -->
                      <input type="submit" name="submit" value="Add to records" class="btn btn-info" /><br />
                      <?php
                      if(isset($message))
@@ -95,6 +101,6 @@
                      ?>
                 </form>
            </div>
-           <br />
+           <h6 style="position: absolute; bottom: 5px; right: 15px;"><a href="dynamic.php"><b>Review and edit fees, attendance and marks --></b></a></h6>
       </body>
  </html>
