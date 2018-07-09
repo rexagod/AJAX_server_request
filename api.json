@@ -1,0 +1,13 @@
+{
+"array":[
+  {
+    "text": "Hello! I'm Zane. What's your name?"
+  },
+  {
+    "text": "On a scale of one to five, how much would you rate your workspace?"
+  },
+  {
+    "text": "Are you content with your current role at your workspace?"
+  }
+ ]
+}
